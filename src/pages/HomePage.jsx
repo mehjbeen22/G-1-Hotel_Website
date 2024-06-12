@@ -1,8 +1,23 @@
 // src/components/HomePage.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { hotelData } from '../data/hotelData';
 
 const HomePage = () => {
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredHotels, setFilteredHotels] = useState(hotelData);
+
+  const handleSearch = () => {
+    const filtered = hotelData.filter((hotel) =>
+      hotel.city.toLowerCase().includes(searchInput.toLowerCase()),
+    );
+    setFilteredHotels(filtered);
+  };
+
+  // Get the hotels with special offers
+  const specialOffers = filteredHotels
+    .filter((hotel) => parseFloat(hotel.discount) >= 20)
+    .slice(0, 8);
+
   return (
     <div>
       {/* Search Bar */}
@@ -13,19 +28,24 @@ const HomePage = () => {
             <input
               type="text"
               placeholder="Location"
-              className="p-2 rounded-md w-1/3"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              className="p-2 rounded-md w-1/3 text-black"
             />
             <input
               type="date"
               placeholder="Check-in"
-              className="p-2 rounded-md w-1/3"
+              className="p-2 rounded-md w-1/3 text-black"
             />
             <input
               type="date"
               placeholder="Check-out"
-              className="p-2 rounded-md w-1/3"
+              className="p-2 rounded-md w-1/3 text-black"
             />
-            <button className="bg-white text-blue-600 hover:bg-gray-200 p-2 rounded-md w-1/6">
+            <button
+              onClick={handleSearch}
+              className="bg-white text-blue-600 hover:bg-gray-200 p-2 rounded-md w-1/6"
+            >
               Search
             </button>
           </div>
@@ -36,7 +56,7 @@ const HomePage = () => {
       <div className="max-w-7xl mx-auto p-8">
         <h2 className="text-2xl font-bold mb-4">Featured Hotels</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {hotelData.slice(0, 4).map((hotel) => (
+          {filteredHotels.map((hotel) => (
             <div
               key={hotel.id}
               className="bg-white shadow-md rounded-lg overflow-hidden"
@@ -66,14 +86,12 @@ const HomePage = () => {
       </div>
 
       {/* Special Offers */}
-      <div className=" p-8 ">
+      <div className="bg-pink-300 p-8 text-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">Special Offers</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {hotelData
-              .filter((hotel) => parseFloat(hotel.discount) >= 20)
-              .slice(0, 8)
-              .map((hotel) => (
+          {specialOffers.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {specialOffers.map((hotel) => (
                 <div
                   key={hotel.id}
                   className="bg-white text-black shadow-md rounded-lg overflow-hidden"
@@ -90,23 +108,30 @@ const HomePage = () => {
                     <p className="text-gray-700">{hotel.description}</p>
                     <div className="mt-4">
                       <span className="text-blue-600 font-bold">
-                        {hotel.price}
-                      </span>
-                      <span className="text-gray-500 ml-2 line-through">
+                        Price : {hotel.price}
+                      </span>{' '}
+                      <br />{' '}
+                      <span className="text-gray-500  line-through">
                         {(
                           parseFloat(hotel.price) *
                           (1 + parseFloat(hotel.discount) / 100)
                         ).toFixed(2)}{' '}
                         INR
-                      </span>
-                      <span className="text-green-600 ml-2">
-                        ({hotel.discount} OFF)
+                      </span>{' '}
+                      <br />
+                      <span className="text-green-600 ">
+                        Discount : ({hotel.discount} OFF)
                       </span>
                     </div>
                   </div>
                 </div>
               ))}
-          </div>
+            </div>
+          ) : (
+            <p className="text-center text-xl">
+              No special offers available now
+            </p>
+          )}
         </div>
       </div>
     </div>
