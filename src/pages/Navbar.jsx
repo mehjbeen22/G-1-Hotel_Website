@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="#" className="text-white font-bold text-xl">
-              HotelName
+              StayEase
             </a>
           </div>
           <div className="hidden md:block">
@@ -25,24 +25,7 @@ const Navbar = () => {
               >
                 About Us
               </a>
-              <a
-                href="#rooms"
-                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Rooms
-              </a>
-              <a
-                href="#dining"
-                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Dining
-              </a>
-              <a
-                href="#services"
-                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Services
-              </a>
+
               <a
                 href="#contact"
                 className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
