@@ -1,5 +1,4 @@
-// src/components/Navbar.jsx
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -7,31 +6,25 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="text-white font-bold text-xl">
+            <Link to="/" className="text-white font-bold text-2xl">
               StayEase
-            </a>
+            </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a
-                href="#home"
+              <Link
+                to="/"
                 className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Home
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                to="/about"
                 className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
               >
                 About Us
-              </a>
+              </Link>
 
-              <a
-                href="#contact"
-                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Contact
-              </a>
               <a
                 href="#book"
                 className="bg-white text-blue-600 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium"
