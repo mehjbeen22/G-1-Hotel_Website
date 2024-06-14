@@ -78,6 +78,10 @@ const HomePage = () => {
                     ).toFixed(2)}{' '}
                     INR
                   </span>
+
+                  <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+                    Know More
+                  </button>
                 </div>
               </div>
             </div>
@@ -86,7 +90,7 @@ const HomePage = () => {
       </div>
 
       {/* Special Offers */}
-      <div className="bg-pink-300 p-8 text-white">
+      <div className="bg-gray-100 p-8 ">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">Special Offers</h2>
           {specialOffers.length > 0 ? (
@@ -123,6 +127,9 @@ const HomePage = () => {
                         Discount : ({hotel.discount} OFF)
                       </span>
                     </div>
+                    <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+                      Know More
+                    </button>
                   </div>
                 </div>
               ))}
