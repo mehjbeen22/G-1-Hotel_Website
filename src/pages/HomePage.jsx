@@ -78,6 +78,10 @@ const HomePage = () => {
                     ).toFixed(2)}{' '}
                     INR
                   </span>
+
+                  <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+                    Know More
+                  </button>
                 </div>
               </div>
             </div>
@@ -123,6 +127,9 @@ const HomePage = () => {
                         Discount : ({hotel.discount} OFF)
                       </span>
                     </div>
+                    <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+                      Know More
+                    </button>
                   </div>
                 </div>
               ))}
