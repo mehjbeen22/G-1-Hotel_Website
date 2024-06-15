@@ -143,7 +143,7 @@ export const hotelData = [
     id: '8',
     hotel_name: 'Vivanta by Taj - Dal View',
     city: 'Srinagar',
-    room_available: true,
+    room_available: false,
     facilities: ['wifi', 'food', 'cleaning', 'available bed', 'room type'],
     price: '14000.00 INR',
     discount: '20%',
