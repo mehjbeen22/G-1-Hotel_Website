@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { hotelData } from '../data/hotelData';
 import Hotel from './Hotel';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -91,11 +92,11 @@ const HomePage = () => {
                     INR
                   </span>
 
-                  <button 
+                  <Link to='/hotel'
                     onClick={() => handleKnowMoreClick(hotel)}
                   className="bg-blue-600 text-white px-2 py-1 rounded ">
                     Know More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
