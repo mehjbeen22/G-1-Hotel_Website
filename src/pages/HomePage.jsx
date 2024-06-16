@@ -1,10 +1,16 @@
 // src/components/HomePage.jsx
 import React, { useState } from 'react';
 import { hotelData } from '../data/hotelData';
+import Hotel from './Hotel';
+import { Link } from 'react-router-dom';
+
 
 const HomePage = () => {
   const [searchInput, setSearchInput] = useState('');
   const [filteredHotels, setFilteredHotels] = useState(hotelData);
+
+  const [selectedHotel, setSelectedHotel] = useState(null); // for track the selected hotel
+
 
   const handleSearch = () => {
     const filtered = hotelData.filter((hotel) =>
@@ -12,6 +18,13 @@ const HomePage = () => {
     );
     setFilteredHotels(filtered);
   };
+
+
+  const handleKnowMoreClick = (hotel) => {
+    setSelectedHotel(hotel); 
+    // alert("Hello..");
+  };
+  
 
   // Get the hotels with special offers
   const specialOffers = filteredHotels
@@ -79,9 +92,11 @@ const HomePage = () => {
                     INR
                   </span>
 
-                  <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+                  <Link to='/hotel'
+                    onClick={() => handleKnowMoreClick(hotel)}
+                  className="bg-blue-600 text-white px-2 py-1 rounded ">
                     Know More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -127,7 +142,9 @@ const HomePage = () => {
                         Discount : ({hotel.discount} OFF)
                       </span>
                     </div>
-                    <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+                    <button
+                    onClick={() => handleKnowMoreClick(hotel)}
+                    className="bg-blue-600 text-white px-2 py-1 rounded ">
                       Know More
                     </button>
                   </div>
@@ -141,6 +158,7 @@ const HomePage = () => {
           )}
         </div>
       </div>
+      {selectedHotel && <Hotel hotel={selectedHotel} />}
     </div>
   );
 };
