@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+}
+.book{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3498db;
+    
+}
+.bk{
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+    height: 50vh;
+}
+.bk h2{
+    color: #e3b1b1;
+}
+.bk h2:hover{
+    color: #3498db;
+}
+.bk label{
+    display: block;
+    margin: 10px 0;
+}
+.bk input{
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.bk button{
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.bk button:hover{
+    background-color: #27ae60;
+}

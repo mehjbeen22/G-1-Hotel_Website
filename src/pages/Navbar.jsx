@@ -25,11 +25,17 @@ const Navbar = () => {
                 About Us
               </Link>
 
+              <Link
+                to="/booking"
+                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                book now
+              </Link>
               <a
-                href="#book"
+                href="/signup"
                 className="bg-white text-blue-600 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium"
               >
-                Book Now
+                Signup
               </a>
             </div>
           </div>
