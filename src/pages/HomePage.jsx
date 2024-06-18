@@ -51,7 +51,7 @@ const HomePage = () => {
       <div className="max-w-7xl mx-auto p-8">
         <h2 className="text-2xl font-bold mb-4">Featured Hotels</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredHotels.map((hotel) => (
+          {filteredHotels.slice(0, 28).map((hotel) => (
             <div
               key={hotel.id}
               className="bg-white shadow-md rounded-lg overflow-hidden"
