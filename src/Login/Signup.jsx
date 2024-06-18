@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./signup.css";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -10,15 +9,11 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit= async (event)=> {
+  function handleSubmit(event) {
     event.preventDefault();
-    try{
-      await createUserWithEmailAndPassword(auth,mail,password)
-      const user=auth.currentUser
-      console.log(user)
-      console.log("user signup successfully")
-    } catch(error){
-      console.log(error.message)
+    if (password !== confirmPassword) {
+      alert("Passwords don't match");
+      return;
     }
     // Add logic to handle signup
   }

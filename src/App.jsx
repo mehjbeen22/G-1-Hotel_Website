@@ -7,8 +7,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./Login/Login";
 import Signup from "./Login/Signup";
 import Book from "./Booking/Book"
-import {ToastContainer} from "react-toastify"
-
 const App = () => {
   return (
     <Router>
@@ -20,7 +18,6 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/booking" element={<Book />} />
-        <ToastContainer/>
       </Routes>
     </Router>
   );
