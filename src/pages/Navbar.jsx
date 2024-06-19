@@ -1,38 +1,36 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 
 const Navbar = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <nav className="bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-white font-bold text-2xl">
+            <Link to="/home" className="text-white font-bold text-2xl">
               StayEase
             </Link>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                to="/"
-                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Home
-              </Link>
-              <Link
-                to="/about"
-                className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                About Us
-              </Link>
-
-              <a
-                href="#book"
-                className="bg-white text-blue-600 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Book Now
-              </a>
+          {isAuthenticated && (
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                <Link
+                  to="/home"
+                  className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/about"
+                  className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  About Us
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
           <div className="-mr-2 flex md:hidden">
             <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
               <svg
