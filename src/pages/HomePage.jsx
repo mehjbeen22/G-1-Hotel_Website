@@ -4,13 +4,11 @@ import { hotelData } from '../data/hotelData';
 import Hotel from './Hotel';
 import { Link } from 'react-router-dom';
 
-
 const HomePage = () => {
   const [searchInput, setSearchInput] = useState('');
   const [filteredHotels, setFilteredHotels] = useState(hotelData);
 
   const [selectedHotel, setSelectedHotel] = useState(null); // for track the selected hotel
-
 
   const handleSearch = () => {
     const filtered = hotelData.filter((hotel) =>
@@ -43,18 +41,9 @@ const HomePage = () => {
               placeholder="Location"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className="p-2 rounded-md w-1/3 text-black"
+              className="p-2 rounded-md w-[80%] text-black"
             />
-            <input
-              type="date"
-              placeholder="Check-in"
-              className="p-2 rounded-md w-1/3 text-black"
-            />
-            <input
-              type="date"
-              placeholder="Check-out"
-              className="p-2 rounded-md w-1/3 text-black"
-            />
+
             <button
               onClick={handleSearch}
               className="bg-white text-blue-600 hover:bg-gray-200 p-2 rounded-md w-1/6"
@@ -69,7 +58,7 @@ const HomePage = () => {
       <div className="max-w-7xl mx-auto p-8">
         <h2 className="text-2xl font-bold mb-4">Featured Hotels</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredHotels.map((hotel) => (
+          {filteredHotels.slice(0, 28).map((hotel) => (
             <div
               key={hotel.id}
               className="bg-white shadow-md rounded-lg overflow-hidden"
@@ -83,18 +72,23 @@ const HomePage = () => {
                 <h3 className="text-xl font-bold mb-2">{hotel.hotel_name}</h3>
                 <p className="text-gray-700">{hotel.description}</p>
                 <div className="mt-4">
-                  <span className="text-blue-600 font-bold">{hotel.price}</span>
-                  <span className="text-gray-500 ml-2 line-through">
+                  <span className="text-blue-600 font-bold">
+                    Price : {hotel.price}
+                  </span>
+                  <br />
+                  <span className="text-gray-500  line-through ">
                     {(
                       parseFloat(hotel.price) *
                       (1 + parseFloat(hotel.discount) / 100)
                     ).toFixed(2)}{' '}
                     INR
                   </span>
-
-                  <Link to='/hotel'
+                  <br />
+                  <Link
+                    to={`/hotel/${hotel.id}`}
                     onClick={() => handleKnowMoreClick(hotel)}
-                  className="bg-blue-600 text-white px-2 py-1 rounded ">
+                    className="bg-blue-600 text-white px-2 py-1 rounded  "
+                  >
                     Know More
                   </Link>
                 </div>
@@ -142,11 +136,12 @@ const HomePage = () => {
                         Discount : ({hotel.discount} OFF)
                       </span>
                     </div>
-                    <button
-                    onClick={() => handleKnowMoreClick(hotel)}
-                    className="bg-blue-600 text-white px-2 py-1 rounded ">
+                    <Link
+                      to={`/hotel/${hotel.id}`}
+                      className="bg-blue-600 text-white px-2 py-1 rounded "
+                    >
                       Know More
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
