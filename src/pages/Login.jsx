@@ -76,7 +76,7 @@ const Login = () => {
           )}
         </div>
 
-        <button className="bg-black text-white p-2 rounded text-lg">
+        <button className="bg-blue-500 text-white p-2 rounded text-lg">
           Login
         </button>
 
