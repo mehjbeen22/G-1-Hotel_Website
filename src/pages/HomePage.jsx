@@ -71,12 +71,14 @@ const HomePage = () => {
               <div className="p-4">
                 <h3 className="text-xl font-bold mb-2">{hotel.hotel_name}</h3>
                 <p className="text-gray-700">{hotel.description}</p>
-                <div className="mt-4">
+                <p className="font-bold  text-blue-700">City : {hotel.city}</p>
+
+                <div>
                   <span className="text-blue-600 font-bold">
                     Price : {hotel.price}
                   </span>
                   <br />
-                  <span className="text-gray-500  line-through ">
+                  <span className="text-red-500  line-through ">
                     {(
                       parseFloat(hotel.price) *
                       (1 + parseFloat(hotel.discount) / 100)
@@ -119,23 +121,27 @@ const HomePage = () => {
                       {hotel.hotel_name}
                     </h3>
                     <p className="text-gray-700">{hotel.description}</p>
-                    <div className="mt-4">
+                    <p className="text-blue-700 font-semibold mt-1">
+                      City : {hotel.city}
+                    </p>
+
+                    <div>
                       <span className="text-blue-600 font-bold">
                         Price : {hotel.price}
                       </span>{' '}
                       <br />{' '}
-                      <span className="text-gray-500  line-through">
+                      <span className="text-red-500  line-through">
                         {(
                           parseFloat(hotel.price) *
                           (1 + parseFloat(hotel.discount) / 100)
                         ).toFixed(2)}{' '}
                         INR
                       </span>{' '}
-                      <br />
-                      <span className="text-green-600 ">
+                      <span className="text-green-600 font-semibold ">
                         Discount : ({hotel.discount} OFF)
                       </span>
                     </div>
+                    <br />
                     <Link
                       to={`/hotel/${hotel.id}`}
                       className="bg-blue-600 text-white px-2 py-1 rounded "
