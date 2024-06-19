@@ -34,7 +34,7 @@ function FooterCom() {
     }
 
     return (
-        <footer className='footer-container bg-dark text-light pt-5'>
+        <footer className='footer-container bg-primary text-light pt-5'>
             <div className='container'>
                 <div className='row newsletter mb-4'>
                     <div className='col-md-8'>
@@ -106,7 +106,7 @@ function FooterCom() {
                 </div>
                 
                 <div className='text-center pt-3 border-top mt-4'>
-                    <p className='mb-0'>© 2024, Your Hotel Name</p>
+                    <p className='mb-0'>© 2024, StayEase</p>
                 </div>
             </div>
         </footer>

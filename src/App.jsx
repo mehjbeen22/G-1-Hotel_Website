@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Book from './Booking/Book';
 import { AuthProvider } from './pages/AuthContext';
+import FooterCom from './pages/FooterCom';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/booking" element={<Book />} />
         </Routes>
+        <FooterCom />
       </Router>
     </AuthProvider>
   );
