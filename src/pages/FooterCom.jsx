@@ -1,116 +1,98 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import appImg1 from '../Images/app.jpg';
-import appImg2 from '../Images/app.jpg';
-import appImg3 from '../Images/app.jpg';
-import styled from 'styled-components';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+const Footer = () => {
+  return (
+    <footer className="bg-gray-800 text-white py-10 px-5">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-10 md:px-0">
+        {/* Company Information */}
+        <div className="footer-column ">
+          <h3 className="text-lg font-semibold mb-4"> Disclaimer</h3>
 
+          <p>
+            StayEase provides hotel booking services for various properties.
+            While we strive to ensure accuracy and quality, StayEase is not
+            responsible for any discrepancies in the property listings or
+            services provided by the hotels. Users are advised to verify details
+            directly with the properties before making a booking.
+          </p>
+        </div>
 
-const SignBtn = styled.button`
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 2px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+        {/* Explore */}
+        <div className="footer-column">
+          <h3 className="text-lg font-semibold mb-4">Explore</h3>
+          <ul>
+            <li className="mb-2">
+              <Link to="/destination" className="hover:text-gray-400">
+                Destinations
+              </Link>
+            </li>
 
-  &:hover {
-    background-color: #003322;
-  }
-`;
+            <li className="mb-2">
+              <Link to="/home" className="hover:text-gray-400">
+                Hotels
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/experiences" className="hover:text-gray-400">
+                Experiences
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-function FooterCom() {
-    const [email, setEmail] = useState('');
+        {/* Legal */}
+        <div className="footer-column">
+          <h3 className="text-lg font-semibold mb-4">Legal</h3>
+          <ul>
+            <li className="mb-2">
+              <Link to="/contact" className="hover:text-gray-400">
+                Contact Us
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/t&c" className="hover:text-gray-400">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/privacypolicy" className="hover:text-gray-400">
+                Privacy Policy
+              </Link>
+            </li>
 
-    const handleSubmit = () => {
-        if (email === '') {
-            alert("Please enter an email address.");
-        } else {
-            alert("Sign Up Successful");
-        }
-    }
+            <li className="mb-2">
+              <Link to="/cancellationPolicy" className="hover:text-gray-400">
+                Cancellation Policy
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-    return (
-        <footer className='footer-container bg-dark text-light pt-5'>
-            <div className='container'>
-                <div className='row newsletter mb-4'>
-                    <div className='col-md-8'>
-                        <h3>Sign Up For Newsletter</h3>
-                        <p>Get E-mail updates about our latest hotel offers and <span className="text-warning">special deals</span></p>
-                    </div>
-                    <div className='col-md-4 d-flex align-items-center'>
-                        <input
-                            type='email'
-                            className='form-control me-2'
-                            placeholder='Your Email Address...'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <SignBtn onClick={handleSubmit}>Sign Up</SignBtn>
-                    </div>
-                </div>
+      {/* Newsletter Signup */}
+      <div className="bg-gray-700 py-5 mt-8">
+        <div className="container mx-auto text-center">
+          <h3 className="text-lg font-semibold mb-4">
+            Stay Updated with Our Latest Offers!
+          </h3>
+          <form className="flex justify-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="p-2 w-full max-w-xs rounded-l-lg focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="p-2 bg-red-500 text-white rounded-r-lg hover:bg-red-600"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-                <div className='row section-p1'>
-                    <div className='col-md-3 mb-4'>
-                        <h4>Contact</h4>
-                        <p><strong>Address: </strong>Hotel StayEase, Mumbai, India</p>
-                        <p><strong>Phone:</strong> +91 234 567 8900</p>
-                        <p><strong>Hours:</strong> 24/7</p>
-                        <div className="follow">
-                            <h4>Follow Us</h4>
-                            <div className="icon">
-                                <a href="https://www.facebook.com/" className="fa fa-facebook-square text-light me-2" aria-hidden="true"></a>
-                                <a href="https://www.instagram.com/" className="fa fa-instagram text-light me-2" aria-hidden="true"></a>
-                                <a href="https://twitter.com/" className="fa fa-twitter-square text-light me-2" aria-hidden="true"></a>
-                                <a href="https://www.pinterest.com/" className="fa fa-pinterest-p text-light me-2" aria-hidden="true"></a>
-                                <a href="https://www.youtube.com/" className="fa fa-youtube-play text-light" aria-hidden="true"></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className='col-md-3 mb-4'>
-                        <h4>About</h4>
-                        <a href="#" className='text-light d-block mb-2'>About Us</a>
-                        <a href="#" className='text-light d-block mb-2'>Our Story</a>
-                        <a href="#" className='text-light d-block mb-2'>Privacy Policy</a>
-                        <a href="#" className='text-light d-block mb-2'>Terms & Conditions</a>
-                        <a href="#" className='text-light d-block mb-2'>Contact Us</a>
-                    </div>
-                    
-                    <div className='col-md-3 mb-4'>
-                        <h4>Customer Service</h4>
-                        <a href="#" className='text-light d-block mb-2'>Help Center</a>
-                        <a href="#" className='text-light d-block mb-2'>FAQs</a>
-                        <a href="#" className='text-light d-block mb-2'>Cancellation Policy</a>
-                        <a href="#" className='text-light d-block mb-2'>Accessibility</a>
-                        <a href="#" className='text-light d-block mb-2'>Contact Support</a>
-                    </div>
-                    
-                    <div className='col-md-3 install mb-4'>
-                        <h4>Install Our App</h4>
-                        <p>From App Store or Google Play</p>
-                        <div className='row mb-2'>
-                            <div className='col'>
-                                <img src={appImg1} className='img-fluid' alt="App Store" />
-                            </div>
-                            <div className='col'>
-                                <img src={appImg2} className='img-fluid' alt="Google Play" />
-                            </div>
-                        </div>
-                        <p>Secured Payment Gateways</p>
-                        <img src={appImg3} className='img-fluid' alt="Payment Gateways" />
-                    </div>
-                </div>
-                
-                <div className='text-center pt-3 border-top mt-4'>
-                    <p className='mb-0'>© 2024, Your Hotel Name</p>
-                </div>
-            </div>
-        </footer>
-    );
-}
-
-export default FooterCom;
+export default Footer;

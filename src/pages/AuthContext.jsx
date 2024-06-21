@@ -1,4 +1,3 @@
-// AuthContext.jsx
 import { createContext, useState, useContext } from 'react';
 
 const AuthContext = createContext();

@@ -146,7 +146,7 @@ const HomePage = () => {
                       to={`/hotel/${hotel.id}`}
                       className="bg-blue-600 text-white px-2 py-1 rounded "
                     >
-                      Know More
+                      Book Now
                     </Link>
                   </div>
                 </div>
