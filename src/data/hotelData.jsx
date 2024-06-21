@@ -143,7 +143,7 @@ export const hotelData = [
     id: '8',
     hotel_name: 'Vivanta by Taj - Dal View',
     city: 'Srinagar',
-    room_available: true,
+    room_available: false,
     facilities: ['wifi', 'food', 'cleaning', 'available bed', 'room type'],
     price: '14000.00 INR',
     discount: '20%',
@@ -202,14 +202,14 @@ export const hotelData = [
   {
     id: '11',
     hotel_name: 'Taj Palace Hotel',
-    city: 'New Delhi',
+    city: 'Delhi',
     room_available: true,
     facilities: ['wifi', 'food', 'cleaning', 'available bed', 'room type'],
     price: '13000.00 INR',
     discount: '15%',
     rating: 4.6,
     description:
-      'Luxury hotel offering majestic accommodations, fine dining options, and impeccable service in the heart of New Delhi.',
+      'Luxury hotel offering majestic accommodations, fine dining options, and impeccable service in the heart of Delhi.',
     swimming_pool: true,
     images: [
       'https://cf.bstatic.com/xdata/images/hotel/max1024x768/336041746.jpg?k=81ca9e45244b4f17cb199c4ac73d2094446ebd17020c5c1425a44a23e860b562&o=&hp=1',
@@ -301,15 +301,15 @@ export const hotelData = [
   },
   {
     id: '16',
-    hotel_name: 'The Oberoi, New Delhi',
-    city: 'New Delhi',
+    hotel_name: 'The Oberoi, Delhi',
+    city: 'Delhi',
     room_available: true,
     facilities: ['wifi', 'food', 'cleaning', 'available bed', 'room type'],
     price: '18000.00 INR',
     discount: '10%',
     rating: 4.7,
     description:
-      'Luxury hotel located in the heart of New Delhi, offering spacious rooms, fine dining, and world-class amenities.',
+      'Luxury hotel located in the heart of Delhi, offering spacious rooms, fine dining, and world-class amenities.',
     swimming_pool: true,
     images: [
       'https://qtxasset.com/quartz/qcloud1/media/image/luxurytraveladvisor/1528489286/Oberoi1.jpg/Oberoi1.jpg?VersionId=gCpbqC1vLFfBXr393kgoGe0cMwfQWnBS',
@@ -401,15 +401,15 @@ export const hotelData = [
   },
   {
     id: '21',
-    hotel_name: 'The Leela Palace New Delhi',
-    city: 'New Delhi',
+    hotel_name: 'The Leela Palace Delhi',
+    city: 'Delhi',
     room_available: true,
     facilities: ['wifi', 'food', 'cleaning', 'available bed', 'room type'],
     price: '23000.00 INR',
     discount: '10%',
     rating: 4.8,
     description:
-      'Luxury palace hotel offering opulent accommodations, fine dining, and impeccable service in the heart of New Delhi.',
+      'Luxury palace hotel offering opulent accommodations, fine dining, and impeccable service in the heart of Delhi.',
     swimming_pool: true,
     images: [
       'https://cf.bstatic.com/xdata/images/hotel/max1024x768/5648061.jpg?k=4629f919fb92436c3e19b71734d208d8e58201df7b29773f90089639f367db6d&o=&hp=1',
@@ -501,15 +501,15 @@ export const hotelData = [
   },
   {
     id: '26',
-    hotel_name: 'The Imperial New Delhi',
-    city: 'New Delhi',
+    hotel_name: 'The Imperial Delhi',
+    city: 'Delhi',
     room_available: true,
     facilities: ['wifi', 'food', 'cleaning', 'available bed', 'room type'],
     price: '28000.00 INR',
     discount: '10%',
     rating: 4.6,
     description:
-      'Luxury heritage hotel offering elegant accommodations, fine dining, and unparalleled service in the heart of New Delhi.',
+      'Luxury heritage hotel offering elegant accommodations, fine dining, and unparalleled service in the heart of Delhi.',
     swimming_pool: true,
     images: [
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlXMKsHZuoWGniAAcRtOj2evBfghqt1u35FQ&s',

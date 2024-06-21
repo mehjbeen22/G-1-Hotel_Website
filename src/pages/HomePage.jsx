@@ -17,6 +17,13 @@ const HomePage = () => {
     setFilteredHotels(filtered);
   };
 
+
+  const handleKnowMoreClick = (hotel) => {
+    setSelectedHotel(hotel); 
+    // alert("Hello..");
+  };
+  
+
   // Get the hotels with special offers
   const specialOffers = filteredHotels
     .filter((hotel) => parseFloat(hotel.discount) >= 20)
@@ -139,7 +146,7 @@ const HomePage = () => {
                       to={`/hotel/${hotel.id}`}
                       className="bg-blue-600 text-white px-2 py-1 rounded "
                     >
-                      Know More
+                      Book Now
                     </Link>
                   </div>
                 </div>

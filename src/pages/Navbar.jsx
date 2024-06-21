@@ -22,11 +22,19 @@ const Navbar = () => {
                 >
                   Home
                 </Link>
+
                 <Link
                   to="/about"
                   className="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium"
                 >
                   About Us
+                </Link>
+
+                <Link
+                  to="/login"
+                  className="bg-white hover:bg-blue-400 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Logout
                 </Link>
               </div>
             </div>
