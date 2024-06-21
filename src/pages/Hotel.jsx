@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { hotelData } from '../data/hotelData';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -12,13 +12,32 @@ import {
   FaStar,
 } from 'react-icons/fa';
 import 'tailwindcss/tailwind.css';
-
 const Hotel = () => {
   const { hotelId } = useParams();
   const hotel = hotelData.find((h) => h.id === hotelId);
 
   if (!hotel) {
     return <div className="text-center text-red-500">Hotel not found</div>;
+  }
+  const [name,setName]=useState("")
+  const [email,setEmail]=useState("")
+  function Hendler(event){
+    event.preventDefault()
+    if(!name){
+      alert("please fill your name first")
+    }
+    else{
+      if(name){
+        if (!email){
+          alert("please enter your email")
+        }
+        else{
+          if (email){
+            alert("your booking is successfull");
+          }
+        }
+      }
+    }
   }
 
   return (
@@ -110,14 +129,16 @@ const Hotel = () => {
           <div className="md:w-1/3 mt-8 md:mt-0 md:ml-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold mb-4">Book Your Stay</h2>
-              <form>
+              <form onSubmit={Hendler}>
                 <div className="mb-4">
                   <label className="block text-gray-700 mb-2" htmlFor="name">
                     Name
                   </label>
                   <input
+                    onChange={(e)=>setName(e.target.value)}
                     type="text"
                     id="name"
+                    placeholder='write your name'
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -126,6 +147,8 @@ const Hotel = () => {
                     Email
                   </label>
                   <input
+                    onChange={(e)=>setEmail(e.target.value)}
+                    placeholder='write your email'
                     type="email"
                     id="email"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -153,6 +176,8 @@ const Hotel = () => {
                     id="checkout"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
+                  <h2 className=" pa text-3xl md:not-italic text-blue-300">Scan and pay</h2>
+                  <img src="https://lh3.googleusercontent.com/a/ACg8ocIwCkag3I4yi9sLNsW6kEa0Jz_mxvOMo80xLV5WX3LYgWq-jRY=s288-c-no" className="h-40" />
                 </div>
                 <button
                   type="submit"
