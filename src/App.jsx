@@ -11,7 +11,7 @@ import About from './pages/About';
 import Hotel from './pages/Hotel';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Book from './Booking/Book';
+import BookingForm from './pages/BookingForm';
 import { AuthProvider } from './pages/AuthContext';
 import Footer from './pages/FooterCom';
 import Destination from './footer sections/Destination';
@@ -33,7 +33,7 @@ const App = () => {
         <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/hotel/:hotelId" element={<Hotel />} />
-        <Route path="/booking" element={<Book />} />
+        <Route path="/booking" element={<BookingForm />} />
         <Route path="/destination" element={<Destination />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/t&c" element={<TermsAndConditions />} />
@@ -52,7 +52,7 @@ const App = () => {
 const AppWrapper = () => (
   <AuthProvider>
     <Router>
-      <App />
+    <App />~
     </Router>
   </AuthProvider>
 );
