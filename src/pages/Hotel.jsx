@@ -39,7 +39,6 @@ const Hotel = () => {
       }
     }
   }
-
   return (
     <div className="max-w-7xl mx-auto p-4 flex flex-col items-center bg-gray-100">
       <div className="w-full md:w-11/12">
@@ -86,7 +85,7 @@ const Hotel = () => {
         </Carousel>
 
         <section className="md:flex md:justify-between">
-          {/* -------- hotel Details ----- */}
+         {/* <....Hotel detail....> */}
           <div className="md:w-2/3">
             <h1 className="text-3xl font-bold mb-2">{hotel.hotel_name}</h1>
             <p className="text-lg text-gray-600 mb-4">{hotel.city}</p>
